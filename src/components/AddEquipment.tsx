@@ -32,8 +32,9 @@ const AddEquipment: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        console.log('Form data being sent:', equipment); // Add this to check the data
         try {
-            const response = await axios.post('http://localhost:5000/equipments' , equipment);
+            const response = await axios.post('http://localhost:5000/api/equipments' , equipment);
             console.log(response.data); // Confirm the response from the backend
         } catch (error) {
             console.error('Error adding equipment:', error);
